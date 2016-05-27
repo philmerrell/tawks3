@@ -28,10 +28,10 @@ ion-content {
 
 }
 
-.bar.bar-footer.ng-enter {
-    animation: slideInUp 500ms;
+.bar.bar-footer.ng-hide-remove {
+    animation: slideInUp 0.5s;
 }
 
-.bar.bar-footer.ng-leave {
-    animation: slideOutDown 500ms;
+.bar.bar-footer.ng-hide-add {
+    animation: slideOutDown 0.5s;
 }
