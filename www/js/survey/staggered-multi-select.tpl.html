@@ -1,0 +1,22 @@
+<h2>{{vm.questionText}}</h2>
+
+<form name="multiChoice">
+    <div ng-repeat="answer in vm.responses" layout="row">
+        <md-radio-group ng-model="vm.answer" class="md-primary">
+            <md-radio-button value="{{answer.Id}}">{{answer.Content}}</md-radio-button>
+        </md-radio-group>
+        <span flex></span>
+        <md-icon class="md-secondary" ng-click="vm.defineAnswer($event, answer.Definition)" aria-label="Chat" md-svg-icon="assets/help.svg"></md-icon>
+    </div>
+</form>
+<md-button ng-if="!vm.lastQuestion()" ng-disabled="multiChoice.$pristine" ng-click="vm.selectRadio(vm.answer)" class="md-raised md-primary">
+    Next Question
+</md-button>
+
+<md-button ng-if="!vm.hideStaggeredButton" ng-disabled="multiChoice.$pristine" ng-click="vm.staggered(vm.answer)" class="md-raised md-accent">
+    Add a Function
+</md-button>
+
+<md-button ng-if="vm.lastQuestion()" ng-disabled="multiChoice.$pristine" ng-click="vm.saveSurvey($event)" class="md-raised md-accent">
+    Submit
+</md-button>

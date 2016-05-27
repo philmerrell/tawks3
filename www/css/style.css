@@ -1,0 +1,37 @@
+/* Empty. Add your own CSS if you like */
+
+ion-content {
+    background: #f6f6f6 !important;
+}
+
+.bar-positive {
+    background: #149c82 !important;
+}
+
+.button-calm {
+    background: #95a5a6 !important;
+
+}
+
+.button-balanced {
+    background: #2c3e50 !important;
+}
+
+
+
+/*.bar.bar-footer {*/
+    /*box-shadow: 0px -1px 8px rgba(0,0,0,0.2);*/
+/*}*/
+
+.bar.bar-footer > button {
+    margin: 0;
+
+}
+
+.bar.bar-footer.ng-enter {
+    animation: slideInUp 500ms;
+}
+
+.bar.bar-footer.ng-leave {
+    animation: slideOutDown 500ms;
+}

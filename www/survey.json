@@ -1,0 +1,349 @@
+[
+  {
+    "Id": 2,
+    "Name": "Main Survey",
+    "Questions": [
+      {
+        "Id": 2,
+        "Content": "When you received the last notification, were you involved in an activity related to your institutional duties or responsibilities?",
+        "QuestionType": "Multi-Choice",
+        "Responses": [
+          {
+            "Id": 57,
+            "Content": "Yes",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 58,
+            "Content": "No",
+            "Stopper": true,
+            "Description": null
+          }
+        ]
+      },
+      {
+        "Id": 3,
+        "Content": "Please classify your activity according to the following categories.",
+        "QuestionType": "Multi-Choice",
+        "Responses": [
+          {
+            "Id": 3,
+            "Content": "Class Preparation",
+            "Stopper": false,
+            "Description": "Class Preparation: activities relating to the preparation of instructional materials (lecture notes, audio-visual supplements, assessments, exams, etc.)"
+          },
+          {
+            "Id": 4,
+            "Content": "Email",
+            "Stopper": false,
+            "Description": "Email: communication via electronic media (email proper) "
+          },
+          {
+            "Id": 5,
+            "Content": "Course Administration",
+            "Stopper": false,
+            "Description": "Course Administration: activities relating to the administration of a course including writing a syllabus, uploading documents to Blackboard, grading, recording grades, making photocopies of instructional materials"
+          },
+          {
+            "Id": 6,
+            "Content": "Instruction",
+            "Stopper": false,
+            "Description": "Instruction: activities relating to the delivery of a course including lecturing, running a seminar, running a lab, practicums, and observation of student teachers."
+          },
+          {
+            "Id": 7,
+            "Content": "Workshop/Conference",
+            "Stopper": false,
+            "Description": "Workshop/Conference: attendance at any professional meeting (teaching, research, service, administration, or professional development)"
+          },
+          {
+            "Id": 8,
+            "Content": "Travel",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 9,
+            "Content": "Scheduling/Planning",
+            "Stopper": false,
+            "Description": "Scheduling/Planning: activities surrounding preparatory work across teaching, research, service, and administration, including writing meeting agendas, scheduling courses, travel itineraries, drafting policies, preparing for meetings, organizing functions or events, and developing curriculum revisions or proposals"
+          },
+          {
+            "Id": 10,
+            "Content": "Dissemination",
+            "Stopper": false,
+            "Description": "Dissemination: presentations at professional meetings over any function, including preparation/writing of notes, audio-visual materials, handouts or any other material related to dissemination of your professional activity (e.g., STEM Exploration Day)  "
+          },
+          {
+            "Id": 11,
+            "Content": "Primary Research",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 12,
+            "Content": "Professional Conversation",
+            "Stopper": false,
+            "Description": "Professional Conversation: conversations with colleagues about any professional topic (hallway conversations at the office, conversations at events, informal dinners with colleagues at conferences)."
+          },
+          {
+            "Id": 13,
+            "Content": "Manuscript/Writing",
+            "Stopper": false,
+            "Description": "Manuscript/Writing: activity geared to the production of professional literature at all stages of the production cycle (i.e., drafting, reviewing colleague or copy editor comments, galley proofs, etc.)"
+          },
+          {
+            "Id": 14,
+            "Content": "Reading/Lit Review",
+            "Stopper": false,
+            "Description": "Reading/Lit Review: Reading oriented to maintaining knowledge about the professional literature in your discipline. "
+          },
+          {
+            "Id": 15,
+            "Content": "Housekeeping",
+            "Stopper": false,
+            "Description": "Housekeeping: activities relating to creating an orderly work environment (i.e., cleaning up files, straightening offices and labs, and updating computers)"
+          },
+          {
+            "Id": 16,
+            "Content": "Reporting",
+            "Stopper": false,
+            "Description": "Reporting: activities associated with annual reporting, OSP effort reporting, travel approvals, expense reports, risk management, etc."
+          },
+          {
+            "Id": 17,
+            "Content": "Research Development",
+            "Stopper": false,
+            "Description": "Research Development: writing grant proposals, working with OSP to develop grant proposals, submission processes"
+          },
+          {
+            "Id": 18,
+            "Content": "Phone Call",
+            "Stopper": false,
+            "Description": "Phone Call: communication by means of the telephone, as well as skype, google circles, etc."
+          },
+          {
+            "Id": 19,
+            "Content": "Student Recruitment and Awards",
+            "Stopper": false,
+            "Description": "Student Recruitment and Awards: Activities involving  increasing enrollment of potential future students as well as making scholarship and other awards to current students"
+          },
+          {
+            "Id": 20,
+            "Content": "Peer Review",
+            "Stopper": false,
+            "Description": "Peer Review: Any editorial work (making comments on a manuscript for a colleague, reviewer for a journal, editor of a journal, etc.) or grant review work."
+          },
+          {
+            "Id": 22,
+            "Content": "Hiring/Recruitment",
+            "Stopper": false,
+            "Description": "Hiring/Recruitment: activities relating to hiring of faculty, professional staff, or administrators (i.e., search committee, interviews, attending a job talk, etc.)"
+          },
+          {
+            "Id": 23,
+            "Content": "Reception/Dinner",
+            "Stopper": false,
+            "Description": "Reception/Dinner: Formal special events organized by the university, college, or department/program or professional conference/association."
+          },
+          {
+            "Id": 24,
+            "Content": "Marketing/PR",
+            "Stopper": false,
+            "Description": "Marketing/PR: activities relating to the production of advertising or community outreach materials for the unit"
+          },
+          {
+            "Id": 25,
+            "Content": "Research Admin",
+            "Stopper": false,
+            "Description": "Research Admin: activities relating to the management of existing research projects, including IRB renewals, effort reporting, writing reports for funding agencies, distributing funds through subcontracts."
+          },
+          {
+            "Id": 26,
+            "Content": "Letter Writing",
+            "Stopper": false,
+            "Description": "Letter Writing: activity geared to writing letters (e.g., student recommendations, requests for external review of tenure portfolios, etc.)"
+          }
+        ]
+      },
+      {
+        "Id": 4,
+        "Content": "Please classify this activity according to one of the 8 functions.",
+        "QuestionType": "Multi-Choice",
+        "Responses": [
+          {
+            "Id": 27,
+            "Content": "Teaching",
+            "Stopper": false,
+            "Description": "Teaching: activities related to the formal instruction of scheduled courses as distinct from mentoring of students outside of courses (including the logistical aspects of running a course and one-on-one instruction, labs, clinicals, teacher observations, etc.)."
+          },
+          {
+            "Id": 28,
+            "Content": "Research",
+            "Stopper": false,
+            "Description": "Research: activities relating to the production of generalizable knowledge, including primary research, preparation of grant proposals, administration of existing projects, and the writing and dissemination of results."
+          },
+          {
+            "Id": 29,
+            "Content": "Admin",
+            "Stopper": false,
+            "Description": "Administrative: activities that are related to roles of responsibility for academic units, programs, and faculty (especially where such a role is compensated either monetarily or through a course release), and self-management in terms of formal interaction with the university bureaucracy (e.g., university/college surveys, accounting forms, HR forms, etc.). "
+          },
+          {
+            "Id": 30,
+            "Content": "Service",
+            "Stopper": false,
+            "Description": "Service: activities that are related to professional, university, or community outreach, including peer/grant reviews, editorial roles, department/college/university governance (especially where such a role is not compensated), and community outreach."
+          },
+          {
+            "Id": 31,
+            "Content": "Advising",
+            "Stopper": false,
+            "Description": "Advising: direct support of student matriculation through dispensing of programmatic information (as opposed to formal instruction)"
+          },
+          {
+            "Id": 32,
+            "Content": "In Transit",
+            "Stopper": false,
+            "Description": "In Transit: any kind of travel during work or for work related purposes (walking to and from class, travel to a conference, travel time for service related activities)."
+          },
+          {
+            "Id": 33,
+            "Content": "Mentoring",
+            "Stopper": false,
+            "Description": "Mentoring: Support of student scholarship outside of a course, including career development, research projects, grad school/career/funding applications, and other professional one-on-one interaction."
+          },
+          {
+            "Id": 34,
+            "Content": "Professional Development",
+            "Stopper": false,
+            "Description": "Professional Development: continuing education, training and skills development, workshops/conferences relating to the above."
+          },
+          {
+            "Id": 35,
+            "Content": "Development",
+            "Stopper": false,
+            "Description": null
+          }
+        ]
+      },
+      {
+        "Id": 5,
+        "Content": "With whom were you doing this activity? Please choose from the following:",
+        "QuestionType": "Multi-Select",
+        "Responses": [
+          {
+            "Id": 36,
+            "Content": "Alone",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 37,
+            "Content": "Faculty Member(s) in My Department",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 38,
+            "Content": "Other Faculty at BSU",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 39,
+            "Content": "Colleagues at Other Institutions",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 40,
+            "Content": "Undergraduate Student(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 41,
+            "Content": "My Chair/Dean etc.",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 42,
+            "Content": "Staff",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 43,
+            "Content": "Graduate Student(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 44,
+            "Content": "Family/Friend(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 45,
+            "Content": "Community Member(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 46,
+            "Content": "Prospective Faculty/Staff",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 47,
+            "Content": "Prospective Undergraduate/Graduate Student(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 48,
+            "Content": "Patient(s)",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 49,
+            "Content": "Alumni",
+            "Stopper": false,
+            "Description": null
+          }
+        ]
+      },
+      {
+        "Id": 6,
+        "Content": "Where were you doing this activity?",
+        "QuestionType": "Multi-Choice",
+        "Responses": [
+          {
+            "Id": 50,
+            "Content": "On Campus",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 51,
+            "Content": "Off Campus",
+            "Stopper": false,
+            "Description": null
+          },
+          {
+            "Id": 62,
+            "Content": "At Home",
+            "Stopper": false,
+            "Description": null
+          }
+        ]
+      }
+    ]
+  }
+]

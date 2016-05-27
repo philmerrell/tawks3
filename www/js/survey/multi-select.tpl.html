@@ -1,0 +1,27 @@
+<form name="multiSelect">
+    <ion-view view-title="Question {{vm.currentState + 1}}">
+        <ion-content class="padding">
+            <h4>{{vm.questionText}}</h4>
+                <ion-list>
+                    <ion-checkbox
+                            ng-repeat="answer in vm.responses"
+                            ng-model="vm.answer[$index]"
+                            ng-change="vm.selectCheckBox(answer.Id, vm.answer[$index])"
+                            on-hold="vm.defineAnswer(answer.Description)"
+                            class="checkbox-dark">
+                        {{answer.Content}}
+                    </ion-checkbox>
+                </ion-list>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </ion-content>
+        <div ng-if="multiSelect.$dirty" class="bar bar-footer">
+            <button ng-if="!vm.lastQuestion() || !vm.stopper" ng-disabled="multiSelect.$pristine || !vm.userResponse.answer.length" ng-click="vm.goToNextQuestion()" class="button button-calm button-block">
+                Next Question <i class="ion ion-arrow-right-c"></i>
+            </button>
+            <button ng-if="vm.lastQuestion()" ng-disabled="multiChoice.$pristine" ng-click="vm.saveSurvey($event)" class="button button-balanced button-block">
+                Submit <i class="ion ion-checkmark"></i>
+            </button>
+        </div>
+    </ion-view>
+</form>

@@ -1,0 +1,25 @@
+<form name="multiChoice" novalidate>
+    <ion-view view-title="Question {{vm.currentState + 1}}">
+        <ion-content class="padding">
+            <h4>{{vm.questionText}}</h4>
+            <ion-list>
+                <ion-radio
+                    ng-repeat="answer in vm.responses"
+                    ng-model="vm.answer"
+                    ng-value="{{answer.Id}}"
+                    on-hold="vm.defineAnswer(answer.Description)">{{answer.Content}}</ion-radio>
+            </ion-list>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </ion-content>
+        <div ng-if="multiChoice.$dirty" class="bar bar-footer">
+            <button ng-if="!vm.lastQuestion()" ng-disabled="multiChoice.$pristine" ng-click="vm.selectRadio(vm.answer)" class="button button-block button-calm">
+                Next Question <i class="ion ion-arrow-right-c"></i>
+            </button>
+
+            <button ng-if="vm.lastQuestion()" ng-disabled="multiChoice.$pristine" ng-click="vm.selectRadio(vm.answer, true, $event)" class="button button-block button-balanced">
+                Submit <i class="ion ion-checkmark"></i>
+            </button>
+        </div>
+    </ion-view>
+</form>
