@@ -13,14 +13,33 @@
   function HomeConfig($stateProvider) {
     $stateProvider
       .state('home', {
+        abstract: true,
         url: '/home',
         views: {
           'main': {
-            templateUrl: "js/home/home.html",
-            controller: "HomeController as vm"
+            template: "<ion-nav-view name='home' role='main'></ion-nav-view>"
           }
         }
-      });
+      })
+      .state('home.welcome', {
+        url: '/welcome',
+        views: {
+          'home': {
+            templateUrl: 'js/home/home.html',
+            controller: 'HomeController as vm'
+          }
+        }
+      })
+      .state('home.about', {
+        url: '/about',
+        views: {
+          'home': {
+            templateUrl: 'js/about/about.html',
+            controller: 'AboutController as vm'
+          }
+        }
+      })
+    ;
   }
 
 })();

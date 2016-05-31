@@ -19,12 +19,15 @@ ion-content {
 
 
 
-/*.bar.bar-footer {*/
+.bar.bar-footer {
     /*box-shadow: 0px -1px 8px rgba(0,0,0,0.2);*/
-/*}*/
+    height: 80px;
+}
+
 
 .bar.bar-footer > button {
     margin: 0;
+    font-size: 1.2em;
 
 }
 
