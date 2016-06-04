@@ -23,12 +23,12 @@
       activate();
 
       function activate() {
-        // Services.getSurvey()
-        //   .then(Services.createSurveyStates)
-        //   .then(Services.startSurvey)
-        //   .catch(function() {
+        Services.getSurvey()
+          .then(Services.createSurveyStates)
+          .then(Services.startSurvey)
+          .catch(function() {
               $state.go('home.welcome');
-          // });
+          });
       }
 
       function go(state){

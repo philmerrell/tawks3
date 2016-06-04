@@ -6,6 +6,7 @@
 angular.module('tawks', ['ionic', 'ngCordova', 'tawks.services', 'tawks.home', 'tawks.about', 'tawks.survey'])
 
 .config(function($httpProvider, $stateProvider) {
+  $httpProvider.defaults.withCredentials = true;
   $httpProvider.interceptors.push('AuthInterceptor');
   $stateProvider
     .state('survey', {
