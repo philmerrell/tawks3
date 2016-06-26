@@ -147,7 +147,7 @@
       return $http.get('https://tawks.azurewebsites.net/account/registerdevicetoken?token='+regObj).then(function(result) {
 
       });
-
+c
     }
 
     /**
