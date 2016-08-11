@@ -56,9 +56,9 @@ angular.module('tawks', ['ionic', 'ngCordova', 'tawks.services', 'tawks.home', '
       if (response.status === 401) {
         //TODO: set survey id in service for later use...
         var id = $location.search().id;
-        
+
         if(window.cordova) {
-          $cordovaInAppBrowser.open('https://tawks.azurewebsites.net/account/mobilelogin', '_blank');
+          $cordovaInAppBrowser.open('https://tawksbsu.tk/account/mobilelogin', '_blank');
         } else {
           window.open('https://tawks.azurewebsites.net/account/mobilelogin', '_blank');
         }

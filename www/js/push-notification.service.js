@@ -144,7 +144,8 @@
      */
     function postRegIdToApi(regObj) {
 
-      return $http.get('https://tawks.azurewebsites.net/account/registerdevicetoken?token='+regObj).then(function(result) {
+      return $http.post('https://tawksbsu.tk/account/registerdevicetoken', { token: regObj })
+        .then(function(result) {
 
       });
 c

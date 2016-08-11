@@ -12,7 +12,7 @@
 
       // TODO: listen for in app browser load start event for auth success...
       // TODO: after successful authentication register for push notifications...
-      // TODO: when push notification is successfull reload state of app with survey id...
+      // TODO: when push notification is successful reload state of app with survey id...
 
       var app = this;
 
@@ -44,7 +44,8 @@
       }
 
       $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event){
-        if(event.url === 'https://tawks.azurewebsites.net/account/MobileLoginSuccess') {
+        console.log(event.url);
+        if(event.url === 'https://tawksbsu.tk/account/MobileLoginSuccess') {
           $cordovaInAppBrowser.close();
           PushNotificationService.init();
 
