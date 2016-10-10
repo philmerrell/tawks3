@@ -31,7 +31,7 @@
    * @returns {{attachErrorListener: attachErrorListener, attachNotificationListener: attachNotificationListener, compareRegIds: compareRegIds, createRegObj: createRegObj, init: init, postRegIdToApi: postRegIdToApi, register: register}}
    * @constructor
    */
-  function PushNotificationService($http, $q, $timeout) {
+  function PushNotificationService($http, $q, $state, $timeout, Services) {
     /*global PushNotification*/
 
     var env = '';
@@ -72,9 +72,18 @@
      */
     function attachNotificationListener() {
       $timeout(function() {
+        console.log('notification attached');
         push.on('notification', function(notification) {
-          winow.alert(notifcation.message);
-          // TODO:
+
+          var mes = JSON.parse(notification.message);
+          var obj = JSON.parse(mes.APNS_SANDBOX);
+          console.log('id', obj.aps.id);
+
+          // var service = $injector.get('Services');
+
+          // get survey
+
+
         });
       });
     }
@@ -126,8 +135,8 @@
       q.resolve(push);
       return q.promise.then(function() {
         return service.register().then(function() {
-          //service.attachNotificationListener();
-          //service.attachErrorListener();
+          attachNotificationListener();
+          attachErrorListener();
         });
       });
     }
@@ -144,7 +153,7 @@
      */
     function postRegIdToApi(regObj) {
 
-      return $http.post('https://tawksbsu.tk/account/registerdevicetoken', { token: regObj })
+      return $http.post('https://tawksbsu.tk/account/registerdevicetoken?token='+regObj)
         .then(function(result) {
 
       });
@@ -166,7 +175,6 @@ c
           console.log('device: ', data.registrationId);
           q.resolve(data.registrationId);
           service.postRegIdToApi(data.registrationId).then(function(result) {
-            alert(result);
           });
         });
 

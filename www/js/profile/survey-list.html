@@ -1,0 +1,13 @@
+<ion-view view-title="Active Surveys">
+  <ion-content>
+    <div ng-if="!vm.activeSurveys.length && vm.activeSurveysLoaded" class="card">
+      <div class="item item-text-wrap">
+        <h2>There are no active surveys for you to take.</h2>
+      </div>
+    </div>
+    <ion-list>
+      <div class="item item-divider">Debug Test</div>
+      <ion-item ng-click="vm.startSurvey()"><span style="font-size: 0.8em;">moments ago: </span> Survey 2</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

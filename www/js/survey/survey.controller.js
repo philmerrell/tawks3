@@ -6,8 +6,9 @@
     .controller('SurveyCtrl', SurveyCtrl)
   ;
 
-  function SurveyCtrl(Services) {
+  function SurveyCtrl(Services, $stateParams) {
     var vm = this;
+    var id = $stateParams.id;
 
     vm.survey = {};
 
@@ -16,11 +17,11 @@
     //////////////////////////
 
     function activate() {
-      getSurvey();
+      getSurvey(id);
     }
 
-    function getSurvey() {
-      return Services.getSurvey().then(function(result) {
+    function getSurvey(id) {
+      return Services.getSurvey(id).then(function(result) {
         vm.survey = result.data;
         return vm.survey;
       });

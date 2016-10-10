@@ -12,9 +12,11 @@
 
     var service = {
       createStateObject   : createStateObject,
+      getProfile          : getProfile,
       getSurvey           : getSurvey,
+      // getSurveyList       : getSurveyList,
       getSurveyLength     : getSurveyLength,
-      getEndOfDay         : getEndOfDay,
+      // getEndOfDay         : getEndOfDay,
       createSurveyStates  : createSurveyStates,
       startSurvey         : startSurvey,
       initSurveyResponse  : initSurveyResponses,
@@ -29,14 +31,23 @@
     function createSurveyStates(getSurveyResultObj) {
 
       var defer = $q.defer();
-      console.log(getSurveyResultObj.data);
-      initSurveyResponses(getSurveyResultObj.data[0].Id);
+      surveyId = getSurveyResultObj.data[0].Id;
+
+      console.log('Survey Id: ', surveyId);
+      initSurveyResponses(surveyId);
       surveyQuestions = getSurveyResultObj.data[0].Questions;
 
-      angular.forEach(surveyQuestions, function(question, index) {
-        var stateObj = service.createStateObject(question, index);
-        runtimeStates.addState(index.toString(), stateObj);
-      });
+      // TODO: only create if the state doesn't already exist...
+
+      console.log('State: ', surveyId.toString() + '0');
+
+      if($state.get(surveyId.toString() + '0') === null) {
+        angular.forEach(surveyQuestions, function(question, index) {
+          var stateObj = service.createStateObject(question, index);
+          runtimeStates.addState(surveyId.toString()+index.toString(), stateObj);
+        });
+
+      }
 
       defer.resolve(surveyQuestions);
       return defer.promise;
@@ -49,7 +60,7 @@
       switch(question.QuestionType) {
         case 'Multi-Select':
           stateObject = {
-            url: '/'+index.toString(),
+            url: '/'+surveyId.toString()+'/'+index.toString(),
             views: {
               "main": {
                 templateUrl: 'js/survey/multi-select.tpl.html',
@@ -63,7 +74,7 @@
           break;
         case 'Multi-Choice':
           stateObject = {
-            url: '/'+index.toString(),
+            url: '/'+surveyId.toString()+'/'+index.toString(),
             views: {
               "main": {
                 templateUrl: 'js/survey/multi-choice.tpl.html',
@@ -77,7 +88,7 @@
           break;
         case 'Staggered Multi-Select':
           stateObject = {
-            url: '/'+index.toString(),
+            url: '/'+surveyId.toString()+'/'+index.toString(),
             views: {
               "main": {
                 templateUrl: 'js/survey/staggered-multi-select.tpl.html',
@@ -96,27 +107,30 @@
 
     }
 
-    function getSurvey() {
-      // surveyId = $location.search().id;
-      surveyId = 3514;
-      if(typeof surveyId === 'undefined') {
-        return $q.reject();
-      } else {
-        // return $http.get('survey.json');
-        return $http.get('https://tawks.azurewebsites.net/api/survey?id='+surveyId);
-      }
+    /**
+     * Get a list of surveys the user is allowed to take.
+     */
+    function getProfile() {
+      return $http.get('https://tawksbsu.tk/api/survey/profile');
+
+    }
+
+    function getSurvey(id) {
+
+      // if(typeof id === 'undefined') {
+      //   return $q.reject();
+      // } else {
+        return $http.get('survey.json');
+        // return $http.get('https://tawksbsu.tk/api/survey?id=4262');
+      // }
     }
 
     function getSurveyLength() {
       return surveyQuestions.length;
     }
 
-    function getEndOfDay() {
-      return $http.get('', {cache:true});
-    }
-
     function startSurvey() {
-      $state.go('0');
+      $state.go(surveyId+'0');
 
     }
 

@@ -1,14 +1,32 @@
 <ion-view view-title="Welcome">
     <ion-content>
+      <form name="creds">
         <div class="card">
             <div class="item item-text-wrap">
                 <h1>TAWKS</h1>
                 The Time Allocation Workload Knowledge Study
             </div>
         </div>
+        <!--<div class="padding" ng-messages="creds.un.$error" style="color:red" role="alert">-->
+          <!--<div ng-message="required">You did not enter a username</div>-->
+        <!--</div>-->
+        <!--<div class="padding" ng-messages="creds.pw.$error" style="color:red" role="alert">-->
+          <!--<div ng-message="required">You did not enter a password</div>-->
+        <!--</div>-->
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Username</span>
+            <input ng-model="vm.creds.username" name="username" type="text" required>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input ng-model="vm.creds.password" name="password" type="password" required>
+          </label>
+        </div>
         <div class="padding">
             <button ng-click="vm.signIn()" class="button button-block button-balanced">Sign In</button>
             <button ui-sref="home.about" class="button button-block button-calm">About TAWKS</button>
         </div>
+      </form>
     </ion-content>
 </ion-view>

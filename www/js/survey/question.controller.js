@@ -17,6 +17,7 @@
 
     vm.answerIsSelected = answerIsSelected;
     vm.questionId = questionObj.Id;
+    vm.currentQuestionNumber = parseInt($state.current.name[1], 10) + 1;
     vm.currentState = parseInt($state.current.name, 10);
     vm.defineAnswer = defineAnswer;
     vm.surveyLength = Services.getSurveyLength();
@@ -66,7 +67,7 @@
     }
 
     function lastQuestion() {
-      if(vm.currentState === vm.surveyLength - 1 || vm.stopper) {
+      if(vm.currentQuestionNumber === vm.surveyLength || vm.stopper) {
         return true;
       } else {
         return false;

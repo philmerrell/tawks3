@@ -8,19 +8,39 @@
     .module('tawks.home')
     .controller('HomeController', HomeController);
 
-  function HomeController($cordovaInAppBrowser) {
+  function HomeController(PushNotificationService, $http, $state, $ionicHistory) {
 
     var vm = this;
 
     vm.signIn = signIn;
+    vm.creds = {};
+    vm.creds['grant_type'] = 'password';
 
     function signIn() {
-      if(window.cordova) {
-        $cordovaInAppBrowser.open('https://tawksbsu.tk/account/mobilelogin', '_blank');
-      } else {
-        window.open('https://tawksbsu.tk/account/mobilelogin', '_blank');
-      }
+      $http.post('https://tawksbsu.tk/token', 'grant_type=password&username='+vm.creds.username+'&password='+vm.creds.password, { headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+        .then(function(response) {
+          localStorage.setItem('token', JSON.stringify(response.data));
+
+
+          if(window.cordova && window.PushNotification) {
+            PushNotificationService.init()
+              .then(function(result) {
+                $ionicHistory.nextViewOptions({
+                  disableBack: true
+                });
+
+                $state.go('profile.surveyList');
+              });
+          } else {
+            $state.go('profile.surveyList');
+          }
+
+
+      });
+
     }
+
+
 
   }
 })();

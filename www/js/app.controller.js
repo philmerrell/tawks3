@@ -18,39 +18,30 @@
 
       app.go = go;
       app.open = open;
-      app.toggleList = toggleList;
 
       activate();
 
       function activate() {
-        Services.getSurvey()
-          .then(Services.createSurveyStates)
-          .then(Services.startSurvey)
-          .catch(function() {
-              $state.go('home.welcome');
-          });
+
+        // Todo... set up work flow to direct to active survey list...
+
+        // Services.getSurvey()
+        //   .then(Services.createSurveyStates)
+        //   .then(Services.startSurvey)
+        //   .catch(function() {
+        //     console.log('catch');
+        //       $state.go('home.welcome');
+        //   });
+
       }
 
       function go(state){
         $state.go(state);
       }
 
-      function toggleList() {
-        $mdSidenav('left').toggle();
-      }
-
       function open(url) {
-        $cordovaInAppBrowser.open(url, '_blank');
       }
 
-      $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event){
-        console.log(event.url);
-        if(event.url === 'https://tawksbsu.tk/account/MobileLoginSuccess') {
-          $cordovaInAppBrowser.close();
-          PushNotificationService.init();
 
-        }
-
-      });
     }
 })();
